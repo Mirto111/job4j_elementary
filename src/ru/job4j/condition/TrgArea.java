@@ -4,7 +4,7 @@ public class TrgArea {
 
   public static double area(double a, double b, double c) {
 
-    double p = (a + b + c)/2;
+    double p = (a + b + c) / 2;
     double pa = p - a;
     double pb = p - b;
     double pc = p - c;
