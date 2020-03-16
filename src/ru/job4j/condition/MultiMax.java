@@ -4,7 +4,8 @@ public class MultiMax {
 
   public int max(int first, int second, int third) {
 
-    int result = first == second && first == third ? -1 : first > second ? first > third ? first : third : second > third ? second : third;
+    int maxFromTwo = first > second ? first : second;
+    int result = maxFromTwo > third ? maxFromTwo : third;
 
     return result;
   }

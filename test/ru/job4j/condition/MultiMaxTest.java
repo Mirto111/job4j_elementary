@@ -32,7 +32,7 @@ public class MultiMaxTest {
   public void whenAllEqual() {
     MultiMax check = new MultiMax();
     int result = check.max(1, 1, 1);
-    assertThat(result, is(-1));
+    assertThat(result, is(1));
   }
 
 }
