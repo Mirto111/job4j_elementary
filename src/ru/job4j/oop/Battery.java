@@ -9,8 +9,8 @@ public class Battery {
   }
 
   public void exchange(Battery another) {
-    this.load -= 1;
-    another.load += 1;
+    this.load = this.load + another.load;
+    another.load = 0;
   }
 
   public static void main(String[] args) {
