@@ -24,13 +24,8 @@ public class BankService {
   }
 
   public User findByPassport(String passport) {
-    User user = null;
-    for (User key : users.keySet()) {
-      if (key.getPassport().equals(passport)) {
-        user = key;
-        break;
-      }
-    }
+    User user = users.keySet().stream()
+        .filter(u -> u.getPassport().equals(passport)).findAny().orElse(null);
     return user;
   }
 
@@ -38,9 +33,8 @@ public class BankService {
     User user = findByPassport(passport);
     Account account = null;
     if (user != null) {
-      List<Account> accounts = users.get(user);
-      int index = accounts.indexOf(new Account(requisite, -1));
-      account = accounts.get(index);
+      account = users.get(user).stream()
+          .filter(a -> a.getRequisite().equals(requisite)).findAny().orElse(null);
     }
     return account;
   }
